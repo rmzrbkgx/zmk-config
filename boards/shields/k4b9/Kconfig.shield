@@ -1,0 +1,2 @@
+config SHIELD_K4B9
+    def_bool $(shields_list_contains,k4b9)

@@ -1,0 +1,39 @@
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+
+        col-gpios
+            = <&gpio0 31 GPIO_ACTIVE_HIGH> // Col0 (D16)
+            , <&gpio1  3 GPIO_ACTIVE_HIGH> // Col1 (D17)
+            , <&gpio1  5 GPIO_ACTIVE_HIGH> // Col2 (D18)
+            , <&gpio1  7 GPIO_ACTIVE_HIGH> // Col3 (D19)
+            ;
+
+        row-gpios
+            = <&gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row0 (D11)
+            , <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row1 (D12)
+            , <&gpio1  1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row2 (D13)
+            , <&gpio0  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row3 (D14)
+            , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row4 (D15)
+            ;
+    };
+
+    // ロータリーエンコーダーの設定
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // EncA (D10)
+        b-gpios = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // EncB (D9)
+        steps = <80>;
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+        triggers-per-rotation = <20>;
+    };
+};

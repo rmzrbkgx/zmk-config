@@ -3,11 +3,14 @@ if SHIELD_K4B9
 config ZMK_KEYBOARD_NAME
     default "k4b9"
 
-# エンコーダーを有効にする設定
+# エンコーダー本体を有効にする
 config EC11
     default y
 
+# トリガー設定を直接「default y」にするのではなく、
+# システム側の選択肢を有効にする書き方に変更
 config EC11_TRIGGER_GLOBAL_THREAD
+    bool
     default y
 
 endif

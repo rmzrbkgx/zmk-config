@@ -7,10 +7,4 @@ config ZMK_KEYBOARD_NAME
 config EC11
     default y
 
-# トリガー設定を直接「default y」にするのではなく、
-# システム側の選択肢を有効にする書き方に変更
-config EC11_TRIGGER_GLOBAL_THREAD
-    bool
-    default y
-
 endif

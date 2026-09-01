@@ -13,7 +13,7 @@
                 &kp M &kp N &kp O &kp P
                 &kp Q &kp R &kp S &kp T
                 &kp U &kp V &kp W &kp X
-                &kp Y &kp Z &kp N0 &kp N0
+                &kp Y &kp Z &kp N1 &kp N2
             >;
         };
     };

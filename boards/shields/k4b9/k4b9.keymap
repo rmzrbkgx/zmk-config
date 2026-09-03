@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     keymap {
@@ -27,18 +28,18 @@
                 &kp O   // R5
                 &kp P   // R4
 
-                &kp LEFT       // Left
-                &kp UP       // Up
+                &kp LEFT    // Left
+                &mmv MOVE_Y(1000)      // Up
                 &mkp LCLK   // X
                 &mkp RCLK   // Y
 
-                &kp DOWN   // Down
+                &mmv MOVE_Y(-100)   // Down
                 &kp RIGHT   // Right
                 &kp A   // A
                 &kp B   // B
 
                 &kp LALT(TAB)   // FL
-                &kp Z           // ZL
+                &kp LSHIFT(LALT(TAB))           // ZL
                 &kp A           //ZR
                 &kp B           //FR
             >;

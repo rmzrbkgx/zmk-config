@@ -7,13 +7,40 @@
 
         default_layer {
             bindings = <
-                &kp A &kp B &kp C &kp D
-                &kp E &kp F &kp G &kp H
-                &kp I &kp J &kp K &kp L
-                &kp M &kp N &kp O &kp P
-                &kp Q &kp R &kp S &kp T
-                &kp U &kp V &kp W &kp X
-                &kp Y &kp Z &kp A &kp B
+                &kp A   // L1
+                &kp B   // L2
+                &kp C   // 未実装L
+                &kp D   // 未実装L
+
+                &kp E   // L4
+                &kp F   // L5
+                &kp G   // 未実装L
+                &kp H   // 未実装L
+
+                &kp I   // 未実装R
+                &kp J   // 未実装R
+                &kp K   // R2
+                &kp L   // R1
+
+                &kp M   // 未実装R
+                &kp N   // 未実装R
+                &kp O   // R5
+                &kp P   // R4
+
+                &kp LEFT       // Left
+                &kp UP       // Up
+                &mkp LCLK   // X
+                &mkp RCLK   // Y
+
+                &kp DOWN   // Down
+                &kp RIGHT   // Right
+                &kp A   // A
+                &kp B   // B
+
+                &kp LALT(TAB)   // FL
+                &kp Z           // ZL
+                &kp A           //ZR
+                &kp B           //FR
             >;
         };
     };

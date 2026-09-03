@@ -38,8 +38,8 @@
                 &kp A   // A
                 &kp B   // B
 
-                &kp LALT(TAB)   // FL
-                &kp LSHIFT(LALT(TAB))           // ZL
+                &kp LA(TAB)   // FL
+                &kp LS(LA(TAB))           // ZL
                 &kp A           //ZR
                 &kp B           //FR
             >;

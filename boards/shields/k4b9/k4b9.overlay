@@ -28,6 +28,25 @@
             ;
     };
 
+    encoder0: encoder0 {
+        compatible = "alps,ec11";
+
+        a-gpios = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+
+        steps = <20>;
+        status = "okay";
+    };
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+
+        sensors = <&encoder0>;
+
+        triggers-per-rotation = <20>;
+    };
+
+    
+
     default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
 

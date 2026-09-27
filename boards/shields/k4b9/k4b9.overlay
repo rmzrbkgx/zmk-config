@@ -54,6 +54,31 @@
 
         status = "okay";
     };
+    analog_stick_listener0: analog_stick_listener0 {
+        compatible = "zmk,analog-stick-listener";
+        device = <&analog_stick0>;
+
+        layer0 {
+            layers = <0>;
+            mode = <ANALOG_STICK_MODE_MOUSE>;
+
+            mouse-min-speed = <1>;
+            mouse-max-speed = <20>;
+        };
+    };
+
+    analog_stick_listener1: analog_stick_listener1 {
+        compatible = "zmk,analog-stick-listener";
+        device = <&analog_stick1>;
+
+        layer0 {
+            layers = <0>;
+            mode = <ANALOG_STICK_MODE_MOUSE>;
+
+            mouse-min-speed = <1>;
+            mouse-max-speed = <20>;
+        };
+    };
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";

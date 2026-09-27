@@ -28,7 +28,7 @@
                 &kp O   // R5
                 &kp P   // R4
 
-                &kp LEFT   b // Left
+                &kp LEFT   // Left
                 &mmv MOVE_Y(1000)      // Up
                 &mkp LCLK   // X
                 &mkp RCLK   // Y

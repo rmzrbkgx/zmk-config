@@ -22,6 +22,8 @@
         y-center = <2048>;
         y-max = <4095>;
 
+        invert-y;
+
         deadzone-percent = <5>;
 
         wait-period-idle = <100>;
@@ -47,6 +49,8 @@
         y-center = <2048>;
         y-max = <4095>;
 
+        invert-y;
+
         deadzone-percent = <5>;
 
         wait-period-idle = <100>;
@@ -54,6 +58,7 @@
 
         status = "okay";
     };
+    /*
     analog_stick_listener0: analog_stick_listener0 {
         compatible = "zmk,analog-stick-listener";
         device = <&analog_stick0>;
@@ -79,6 +84,7 @@
             mouse-max-speed = <20>;
         };
     };
+    */
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";

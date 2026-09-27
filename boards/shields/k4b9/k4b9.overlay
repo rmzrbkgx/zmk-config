@@ -1,11 +1,59 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-
+#include <dt-bindings/analog-stick/modes.h>
 / {
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
     };
+    analog_stick0: analog_stick0 {
+        compatible = "zmk,analog-stick";
 
+        // Left stick
+        // X = P0.02 / AIN0
+        // Y = P0.03 / AIN1
+        io-channels = <&adc 0>, <&adc 1>;
+
+        // 仮値。実測後に変更する
+        x-min = <0>;
+        x-center = <2048>;
+        x-max = <4095>;
+
+        y-min = <0>;
+        y-center = <2048>;
+        y-max = <4095>;
+
+        deadzone-percent = <5>;
+
+        wait-period-idle = <100>;
+        wait-period-active = <8>;
+
+        status = "okay";
+    };
+
+    analog_stick1: analog_stick1 {
+        compatible = "zmk,analog-stick";
+
+        // Right stick
+        // X = P0.04 / AIN2
+        // Y = P0.29 / AIN5
+        io-channels = <&adc 2>, <&adc 5>;
+
+        // 仮値。実測後に変更する
+        x-min = <0>;
+        x-center = <2048>;
+        x-max = <4095>;
+
+        y-min = <0>;
+        y-center = <2048>;
+        y-max = <4095>;
+
+        deadzone-percent = <5>;
+
+        wait-period-idle = <100>;
+        wait-period-active = <8>;
+
+        status = "okay";
+    };
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";

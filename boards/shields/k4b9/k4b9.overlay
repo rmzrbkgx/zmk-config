@@ -9,18 +9,18 @@
         compatible = "zmk,analog-stick";
 
         // Left stick
-        // X = P0.02 / AIN0
-        // Y = P0.03 / AIN1
+        // X = P0.02 / AIN0 / ADC channel 3
+        // Y = P0.03 / AIN1 / ADC channel 1
         io-channels = <&adc 3>, <&adc 1>;
 
         // 仮値。実測後に変更する
-        x-min = <0>;
-        x-center = <2048>;
-        x-max = <4095>;
+        x-min = <112>;
+        x-center = <1780>;
+        x-max = <3276>;
 
-        y-min = <0>;
-        y-center = <2048>;
-        y-max = <4095>;
+        y-min = <179>;
+        y-center = <1822>;
+        y-max = <3422>;
 
         invert-y;
 
@@ -36,18 +36,18 @@
         compatible = "zmk,analog-stick";
 
         // Right stick
-        // X = P0.04 / AIN2
-        // Y = P0.29 / AIN5
+        // X = P0.04 / AIN2 / ADC channel 2
+        // Y = P0.29 / AIN5 / ADC channel 5
         io-channels = <&adc 2>, <&adc 5>;
 
         // 仮値。実測後に変更する
-        x-min = <0>;
-        x-center = <2048>;
-        x-max = <4095>;
+        x-min = <183>;
+        x-center = <1681>;
+        x-max = <3158>;
 
-        y-min = <0>;
-        y-center = <2048>;
-        y-max = <4095>;
+        y-min = <179>;
+        y-center = <1901>;
+        y-max = <3524>;
 
         invert-y;
 
@@ -58,7 +58,6 @@
 
         status = "okay";
     };
-    /*
     analog_stick_listener0: analog_stick_listener0 {
         compatible = "zmk,analog-stick-listener";
         device = <&analog_stick0>;
@@ -72,6 +71,7 @@
         };
     };
 
+    /*
     analog_stick_listener1: analog_stick_listener1 {
         compatible = "zmk,analog-stick-listener";
         device = <&analog_stick1>;
@@ -150,6 +150,8 @@
     #address-cells = <1>;
     #size-cells = <0>;
 
+    // ADC channel 3 is intentionally used for AIN0.
+    // ADC channel 0 is unusable on this board/build.
     channel@3 {
         reg = <3>;
 

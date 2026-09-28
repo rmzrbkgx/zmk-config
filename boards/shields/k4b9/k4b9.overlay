@@ -60,7 +60,7 @@
 
         status = "okay";
     };
-    
+
     analog_stick_listener0: analog_stick_listener0 {
         compatible = "zmk,analog-stick-listener";
         device = <&analog_stick0>;
@@ -70,7 +70,7 @@
             mode = <ANALOG_STICK_MODE_MOUSE>;
 
             mouse-min-speed = <1>;
-            mouse-max-speed = <40>;
+            mouse-max-speed = <30>;
         };
     };
 
@@ -83,7 +83,7 @@
             mode = <ANALOG_STICK_MODE_MOUSE>;
 
             mouse-min-speed = <1>;
-            mouse-max-speed = <10>;
+            mouse-max-speed = <5>;
         };
     };
     kscan0: kscan {

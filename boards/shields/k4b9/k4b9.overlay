@@ -11,7 +11,7 @@
         // Left stick
         // X = P0.02 / AIN0
         // Y = P0.03 / AIN1
-        io-channels = <&adc 0>, <&adc 1>;
+        io-channels = <&adc 1>, <&adc 1>;
 
         // 仮値。実測後に変更する
         x-min = <0>;
@@ -156,7 +156,7 @@
         zephyr,gain = "ADC_GAIN_1_6";
         zephyr,reference = "ADC_REF_INTERNAL";
         zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
-        zephyr,input-positive = <NRF_SAADC_AIN1>;
+        zephyr,input-positive = <NRF_SAADC_AIN0>;
         zephyr,resolution = <12>;
     };
 
@@ -166,7 +166,7 @@
         zephyr,gain = "ADC_GAIN_1_6";
         zephyr,reference = "ADC_REF_INTERNAL";
         zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
-        zephyr,input-positive = <NRF_SAADC_AIN0>;
+        zephyr,input-positive = <NRF_SAADC_AIN1>;
         zephyr,resolution = <12>;
     };
 

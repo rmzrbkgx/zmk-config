@@ -11,7 +11,7 @@
         // Left stick
         // X = P0.02 / AIN0
         // Y = P0.03 / AIN1
-        io-channels = <&adc 1>, <&adc 1>;
+        io-channels = <&adc 0>, <&adc 0>;
 
         // 仮値。実測後に変更する
         x-min = <0>;

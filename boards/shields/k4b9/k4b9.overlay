@@ -11,7 +11,7 @@
         // Left stick
         // X = P0.02 / AIN0
         // Y = P0.03 / AIN1
-        io-channels = <&adc 0>, <&adc 0>;
+        io-channels = <&adc 3>, <&adc 1>;
 
         // 仮値。実測後に変更する
         x-min = <0>;
@@ -150,13 +150,13 @@
     #address-cells = <1>;
     #size-cells = <0>;
 
-    channel@0 {
-        reg = <0>;
+    channel@3 {
+        reg = <3>;
 
         zephyr,gain = "ADC_GAIN_1_6";
         zephyr,reference = "ADC_REF_INTERNAL";
         zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
-        zephyr,input-positive = <NRF_SAADC_AIN1>;
+        zephyr,input-positive = <NRF_SAADC_AIN0>;
         zephyr,resolution = <12>;
     };
 

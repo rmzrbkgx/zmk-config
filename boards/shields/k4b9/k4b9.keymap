@@ -29,7 +29,7 @@
                 &kp P   // R4
 
                 &kp LEFT   // Left
-                &mmv MOVE_Y(-1000)      // Up
+                &bt BT_CLR      // Up
                 &mkp LCLK   // X
                 &mkp RCLK   // Y
 
